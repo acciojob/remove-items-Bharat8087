@@ -1,9 +1,11 @@
-//your JS code here. If required.
-function removeSelectedColor() {
-  var selectElement = document.getElementById("colorSelect");
-  var selectedOption = selectElement.options[selectElement.selectedIndex];
-  
-  if (selectedOption) {
-    selectElement.removeChild(selectedOption);
-  }
-}
+document.addEventListener("DOMContentLoaded", function() {
+    var selectElement = document.getElementById("colorSelect");
+    var button = document.querySelector('input[type="button"]');
+    
+    button.addEventListener("click", function() {
+        var selectedIndex = selectElement.selectedIndex;
+        if (selectedIndex !== -1) {
+            selectElement.remove(selectedIndex);
+        }
+    });
+});
